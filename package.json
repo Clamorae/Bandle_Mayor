@@ -2,5 +2,23 @@
   "dependencies": {
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0"
-  }
+  },
+  "name": "bandle_mayor",
+  "version": "1.0.0",
+  "description": "bandle_mayor_bot",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "maire"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clamorae/Bandle_Mayor.git"
+  },
+  "author": "Clamorae",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Clamorae/Bandle_Mayor/issues"
+  },
+  "homepage": "https://github.com/Clamorae/Bandle_Mayor#readme"
 }
