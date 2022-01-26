@@ -7,8 +7,26 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    if (msg.content === "ping") {
-        msg.reply("pong");
+    if (msg.content === "maire") {
+        switch(Math.floor(Math.random() * 6)) {
+            case 0:
+                msg.reply("Ou est passé mon discours?");
+              break;
+            case 1:
+                msg.reply("Ensemble nous sommes unis");
+              break;
+            case 2:
+                msg.reply("De toutes les régions, nous ne faisons qu’un!");
+              break;
+            case 3:
+                msg.reply("Je devrais faire un discours? ou est passé mon discours?");
+              break;
+            case 4:
+                msg.reply("Cela demande mon plus grand chapeau");
+              break;
+            default:
+                msg.reply("Allez y! Attrapez mon chapeau, peignez ma moustache");
+          }
     }
 });
 
