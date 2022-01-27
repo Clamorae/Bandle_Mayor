@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "16.6"
+  },
   "dependencies": {
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0"
