@@ -7,7 +7,7 @@
     "dotenv": "^14.2.0"
   },
   "name": "bandle_mayor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "bandle_mayor_bot",
   "main": "index.js",
   "devDependencies": {},

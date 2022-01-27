@@ -30,12 +30,63 @@ client.on("message", msg => {
     }
 });
 
-client.on("message", msg => {
+/*client.on("message", msg => {
   if (msg.content === "test") {
-    channel.send("https://media.discordapp.net/attachments/936395302158602281/936397789083078696/05BC160.png?width=311&height=468");
+    msg.channel.send(addImage(0));
     msg.reply("https://media.discordapp.net/attachments/936395302158602281/936395315978838036/03SI015.png?width=311&height=468");
   }
-});
+});*/
+
+function addImage(value){
+  switch(value){
+    case 0:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402959699415090/05BC010.png";
+    break;
+    case 1:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402647005691974/05BC018.png";
+    break;
+    case 2:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936401750968115280/05BC160.png";
+    break;
+    case 3:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402321598996580/05BC106.png";
+    break;
+    case 4:
+      var a = "https://media.discordapp.net/attachments/936395302158602281/936401937505599508/05BC192.png?width=311&height=468";
+    break;
+    case 5:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402493670326272/05BC119.png";
+    break;
+    case 6:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402599031226448/05BC175.png";
+    break;
+    case 7:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936403314332012624/01DE049.png";
+    break;
+    case 8:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402628085174382/05BC129.png";
+    break;
+    case 9:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402871900045322/05BC096.png";
+    break;
+    case 10:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402901604106270/05BC152.png";
+    break;
+    case 11:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402954800467988/05BC140.png";
+    break;
+    case 12:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402927797559366/05BC190.png";
+    break;
+    case 13:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936403234304688208/05BC179.png";
+    break;
+    case 14:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402976480821309/05BC148.png";
+    break; 
+  }
+  return(a);
+}
 
 client.on("message", msg => {
   if (msg.content === "carte") {
@@ -190,6 +241,9 @@ client.on("message", msg => {
       break; 
     }
     msg.reply(`- ${a} \n- ${b} \n- ${c}`);
+    msg.channel.send(addImage(x));
+    msg.channel.send(addImage(y));
+    msg.channel.send(addImage(z));
   }
 });
 
