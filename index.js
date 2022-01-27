@@ -32,6 +32,7 @@ client.on("message", msg => {
 
 client.on("message", msg => {
   if (msg.content === "test") {
+    message.channel.send("https://media.discordapp.net/attachments/936395302158602281/936397789083078696/05BC160.png?width=311&height=468");
     msg.reply("https://media.discordapp.net/attachments/936395302158602281/936395315978838036/03SI015.png?width=311&height=468");
   }
 });
