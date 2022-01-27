@@ -31,6 +31,12 @@ client.on("message", msg => {
 });
 
 client.on("message", msg => {
+  if (msg.content === "test") {
+    msg.reply("https://media.discordapp.net/attachments/936395302158602281/936395315978838036/03SI015.png?width=311&height=468");
+  }
+});
+
+client.on("message", msg => {
   if (msg.content === "carte") {
     let x = Math.floor(Math.random() * 15)
     switch(x){
@@ -182,7 +188,6 @@ client.on("message", msg => {
         var c = "Monstre violet furieux";
       break; 
     }
-    //a = "- " + a + "\n- " + b + "\n- " + c;
     msg.reply(`- ${a} \n- ${b} \n- ${c}`);
   }
 });
