@@ -89,7 +89,7 @@ function addImage(value){
 }
 
 client.on("message", msg => {
-  if (msg.content === "carte") {
+  if (msg.content === "cartes") {
     let x = Math.floor(Math.random() * 15)
     switch(x){
       case 0:
