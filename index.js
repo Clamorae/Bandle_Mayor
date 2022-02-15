@@ -103,7 +103,7 @@ function addImage(value){
 client.on("message", msg => {
   if (msg.content.includes("cartes")) {
 
-    let x = Math.floor(Math.random() * 15)
+    let x = Math.floor(Math.random() * 18)
     switch(x){
       case 0:
         var a = "Dresseur de Squales";
@@ -166,12 +166,12 @@ client.on("message", msg => {
 
     let y = 0;
     do {
-      y = Math.floor(Math.random() * 15);
+      y = Math.floor(Math.random() * 18);
     }while (y==x);
 
     let z;
     do {
-      z = Math.floor(Math.random() * 15);
+      z = Math.floor(Math.random() * 18);
     }while (z==x || z==y);
 
     switch(y){
