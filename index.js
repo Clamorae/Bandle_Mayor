@@ -7,7 +7,7 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    if (msg.content === "maire") {
+    if (msg.content.includes("maire")) {
         switch(Math.floor(Math.random() * 6)) {
             case 0:
                 msg.reply("Ou est passé mon discours?");
@@ -40,56 +40,69 @@ client.on("message", msg => {
 function addImage(value){
   switch(value){
     case 0:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402959699415090/05BC010.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092846699896883/dresseur.png";
     break;
     case 1:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402647005691974/05BC018.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092592818671616/cavalier.png";
     break;
     case 2:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936401750968115280/05BC160.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093947952164895/proto.png";
     break;
     case 3:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402321598996580/05BC106.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092855004622888/fulmi.png";
     break;
     case 4:
-      var a = "https://media.discordapp.net/attachments/936395302158602281/936401937505599508/05BC192.png?width=311&height=468";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093962300850206/jumeaux.png";
     break;
     case 5:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402493670326272/05BC119.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093962560925706/sbire.png";
     break;
     case 6:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402599031226448/05BC175.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931506270258/telescope.png";
     break;
     case 7:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936403314332012624/01DE049.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092832875470858/cercle.png";
     break;
     case 8:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402628085174382/05BC129.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092292149985290/boss.png";
     break;
     case 9:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402871900045322/05BC096.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093948140896266/tenor.png";
     break;
     case 10:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402901604106270/05BC152.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931724402688/voyageurs.png";
     break;
     case 11:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402954800467988/05BC140.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093904201371678/traineau.png";
     break;
     case 12:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402927797559366/05BC190.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093904444645396/mecha.png";
     break;
     case 13:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936403234304688208/05BC179.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093948379967548/yordle.png";
     break;
     case 14:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/936402976480821309/05BC148.png";
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931288199198/monstre.png";
+    break;
+    case 15:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093903932932176/semis.png";
     break; 
+    case 16:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931074273330/grand-pere.png";
+    break; 
+    case 17:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093947671126026/grimpeur.png";
+    break; 
+    case 18:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093962774831174/tete.png";
+    break;
   }
   return(a);
 }
 
 client.on("message", msg => {
-  if (msg.content === "cartes") {
+  if (msg.content.includes("cartes")) {
+
     let x = Math.floor(Math.random() * 15)
     switch(x){
       case 0:
@@ -114,7 +127,7 @@ client.on("message", msg => {
         var a = "Téléscope ambulant";
       break;
       case 7:
-        var a = "Poro blindé(raciste imo)";
+        var a = "Cercle de champignon";
       break;
       case 8:
         var a = "Boss de l’arene";
@@ -137,15 +150,30 @@ client.on("message", msg => {
       case 14:
         var a = "Monstre violet furieux";
       break; 
+      case 15:
+        var a = "Semis de pomme de pin explosive";
+      break; 
+      case 16:
+        var a = "Grand-père féérique";
+      break; 
+      case 17:
+        var a = "Grimpeur érudit";
+      break; 
+      case 18:
+        var a = "Tête brulée";
+      break; 
     }
+
     let y = 0;
     do {
       y = Math.floor(Math.random() * 15);
     }while (y==x);
+
     let z;
     do {
       z = Math.floor(Math.random() * 15);
     }while (z==x || z==y);
+
     switch(y){
       case 0:
         var b = "Dresseur de Squales";
@@ -192,6 +220,18 @@ client.on("message", msg => {
       case 14:
         var b = "Monstre violet furieux";
       break; 
+      case 15:
+        var a = "Semis de pomme de pin explosive";
+      break; 
+      case 16:
+        var a = "Grand-père féérique";
+      break; 
+      case 17:
+        var a = "Grimpeur érudit";
+      break; 
+      case 18:
+        var a = "Tête brulée";
+      break;  
     }
     switch(z){
       case 0:
@@ -239,7 +279,20 @@ client.on("message", msg => {
       case 14:
         var c = "Monstre violet furieux";
       break; 
+      case 15:
+        var a = "Semis de pomme de pin explosive";
+      break; 
+      case 16:
+        var a = "Grand-père féérique";
+      break; 
+      case 17:
+        var a = "Grimpeur érudit";
+      break; 
+      case 18:
+        var a = "Tête brulée";
+      break;  
     }
+
     msg.reply(`- ${a} \n- ${b} \n- ${c}`);
     msg.channel.send(addImage(x));
     msg.channel.send(addImage(y));
@@ -248,26 +301,3 @@ client.on("message", msg => {
 });
 
 client.login(process.env.BOT_TOKEN);
-
-/* phrases.Add("Ou est passé mon discours ?");                                 // 0
-phrases.Add("Ensemble nous sommes unis");
-phrases.Add("De toutes les régions, nous ne faisons qu’un !");
-phrases.Add("Je devrais faire un discours ? ou est passé mon discours ?");
-phrases.Add("Cela demande mon plus grand chapeau");
-phrases.Add("Allez y ! Attrapez mon chapeau, peignez ma moustache");        // 5*/
-
-/* cartes.Add("Dresseur de Squales");          // 0
-                        cartes.Add("Cavalier prétentieux");
-                        cartes.Add("Proto poro");
-                        cartes.Add("Fulminace");
-                        cartes.Add("Jumeaux artilleurs");
-                        cartes.Add("Sbire");
-                        cartes.Add("Téléscope ambulant");
-                        cartes.Add("Poro blindé(raciste imo)");
-                        cartes.Add("Boss de l’arene");
-                        cartes.Add("Tenor terrifiant");
-                        cartes.Add("Voyageurs désabusés ");
-                        cartes.Add("Traineau de poros");
-                        cartes.Add("Mécha-commentateur");
-                        cartes.Add("Yordle aérien");
-                        cartes.Add("Monstre violet furieux");  // 13*/
