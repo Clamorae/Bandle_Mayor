@@ -16,7 +16,7 @@ client.on("message", msg => {
                 msg.reply("Ensemble, nous sommes unis !");
               break;
             case 2:
-                msg.reply("De toutes les régions, nous ne faisons qu’un!");
+                msg.reply("Prenez mon chapeau, peignez ma moustache !");
               break;
             case 3:
                 msg.reply("Je vais faire un discours ! Euhm, où est mon discours ?");
@@ -33,8 +33,6 @@ client.on("message", msg => {
               case 7:
                 msg.reply("Est-ce l'heure de la sieste ?");
               break;
-            default:
-                msg.reply("Prenez mon chapeau, peignez ma moustache !");
           }
     }
 });
@@ -230,16 +228,16 @@ client.on("message", msg => {
         var b = "Monstre violet furieux";
       break; 
       case 15:
-        var a = "Semis de pomme de pin explosive";
+        var b = "Semis de pomme de pin explosive";
       break; 
       case 16:
-        var a = "Grand-père féérique";
+        var b = "Grand-père féérique";
       break; 
       case 17:
-        var a = "Grimpeur érudit";
+        var b = "Grimpeur érudit";
       break; 
       case 18:
-        var a = "Tête brulée";
+        var b = "Tête brulée";
       break;  
     }
     switch(z){
@@ -289,16 +287,16 @@ client.on("message", msg => {
         var c = "Monstre violet furieux";
       break; 
       case 15:
-        var a = "Semis de pomme de pin explosive";
+        var c = "Semis de pomme de pin explosive";
       break; 
       case 16:
-        var a = "Grand-père féérique";
+        var c = "Grand-père féérique";
       break; 
       case 17:
-        var a = "Grimpeur érudit";
+        var c = "Grimpeur érudit";
       break; 
       case 18:
-        var a = "Tête brulée";
+        var c = "Tête brulée";
       break;  
     }
 
