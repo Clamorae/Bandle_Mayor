@@ -8,24 +8,33 @@ client.on("ready", () => {
 
 client.on("message", msg => {
     if (msg.content.includes("maire")) {
-        switch(Math.floor(Math.random() * 6)) {
+        switch(Math.floor(Math.random() * 8)) {
             case 0:
-                msg.reply("Ou est passé mon discours?");
+                msg.reply("Ou est passé mon discours ?");
               break;
             case 1:
-                msg.reply("Ensemble nous sommes unis");
+                msg.reply("Ensemble, nous sommes unis !");
               break;
             case 2:
                 msg.reply("De toutes les régions, nous ne faisons qu’un!");
               break;
             case 3:
-                msg.reply("Je devrais faire un discours? ou est passé mon discours?");
+                msg.reply("Je vais faire un discours ! Euhm, où est mon discours ?");
               break;
             case 4:
-                msg.reply("Cela demande mon plus grand chapeau");
+                msg.reply("Cela mérite mon plus grand chapeau !");
+              break;
+            case 5:
+                msg.reply("Avec les autres régions, nous sommes, unis !");
+              break;
+              case 6:
+                msg.reply("Fuite courageuse !");
+              break;
+              case 7:
+                msg.reply("Est-ce l'heure de la sieste ?");
               break;
             default:
-                msg.reply("Allez y! Attrapez mon chapeau, peignez ma moustache");
+                msg.reply("Prenez mon chapeau, peignez ma moustache !");
           }
     }
 });
@@ -197,7 +206,7 @@ client.on("message", msg => {
         var b = "Téléscope ambulant";
       break;
       case 7:
-        var b = "Poro blindé(raciste imo)";
+        var b = "Cercle de champignon";
       break;
       case 8:
         var b = "Boss de l’arene";
@@ -256,7 +265,7 @@ client.on("message", msg => {
         var c = "Téléscope ambulant";
       break;
       case 7:
-        var c = "Poro blindé(raciste imo)";
+        var c = "Cercle de champignon";
       break;
       case 8:
         var c = "Boss de l’arene";
