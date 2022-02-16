@@ -1,4 +1,6 @@
 const { Client, Intents } = require('discord.js');
+const sql = require("sqlite");
+sql.open("./database.sqlite")
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 require("dotenv").config();
 
@@ -45,6 +47,7 @@ function getSentence(value){
 client.on('message', function(message) {
   // Now, you can use the message variable inside
   if (message.content === "launch") {
+      msg.reply("daily quote launched");
       daytime = 0;
       var interval = setInterval (function () {
         daytime++;
