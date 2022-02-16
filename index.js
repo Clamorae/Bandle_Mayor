@@ -8,41 +8,54 @@ client.on("ready", () => {
 
 client.on("message", msg => {
     if (msg.content.includes("maire")) {
-        switch(Math.floor(Math.random() * 8)) {
-            case 0:
-                msg.reply("Ou est passé mon discours ?");
-              break;
-            case 1:
-                msg.reply("Ensemble, nous sommes unis !");
-              break;
-            case 2:
-                msg.reply("Prenez mon chapeau, peignez ma moustache !");
-              break;
-            case 3:
-                msg.reply("Je vais faire un discours ! Euhm, où est mon discours ?");
-              break;
-            case 4:
-                msg.reply("Cela mérite mon plus grand chapeau !");
-              break;
-            case 5:
-                msg.reply("Avec les autres régions, nous sommes, unis !");
-              break;
-              case 6:
-                msg.reply("Fuite courageuse !");
-              break;
-              case 7:
-                msg.reply("Est-ce l'heure de la sieste ?");
-              break;
-          }
+      msg.reply(getSentence(Math.floor(Math.random() * 8)))
     }
 });
 
-/*client.on("message", msg => {
-  if (msg.content === "test") {
-    msg.channel.send(addImage(0));
-    msg.reply("https://media.discordapp.net/attachments/936395302158602281/936395315978838036/03SI015.png?width=311&height=468");
+function getSentence(value){
+  switch(value){
+    case 0:
+        var a = "Ou est passé mon discours ?";
+      break;
+    case 1:
+        var a = "Ensemble, nous sommes unis !";
+      break;
+    case 2:
+        var a = "Prenez mon chapeau, peignez ma moustache !";
+      break;
+    case 3:
+        var a = "Je vais faire un discours ! Euhm, où est mon discours ?";
+      break;
+    case 4:
+        var a = "Cela mérite mon plus grand chapeau !";
+      break;
+    case 5:
+        var a = "Avec les autres régions, nous sommes, unis !";
+      break;
+      case 6:
+          var a = "Fuite courageuse !";
+      break;
+      case 7:
+          var a = "Est-ce l'heure de la sieste ?";
+      break;
   }
-});*/
+  return (a);
+}
+
+client.on('message', function(message) {
+  // Now, you can use the message variable inside
+  if (message.content === "launch") {
+      daytime = 0;
+      var interval = setInterval (function () {
+        daytime++;
+        message.channel
+          .send(getSentence(Math.floor(Math.random() * 8))) // increment the variable
+          .catch(console.error); // add error handling here
+      }, 86400 * 1000); 
+      var stopwatch = 0;
+      setInterval(() => console.log(`It's been ${++stopwatch} second(s)`), 1000);
+  }
+});
 
 function addImage(value){
   switch(value){
