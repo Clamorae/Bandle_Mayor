@@ -1,4 +1,9 @@
 const { Client, Intents } = require('discord.js');
+
+/*const sql = require("sqlite");
+sql.open("./database.sqlite");
+sql.run("CREATE TABLE IF NOT EXISTS userData (userId TEXT, money INTEGER)");*/
+
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 require("dotenv").config();
 
@@ -117,6 +122,135 @@ function addImage(value){
     case 18:
       var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093962774831174/tete.png";
     break;
+    case 19:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457217858904064/poropillon.png";
+    break;
+    case 20:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457218026680330/psinistre.png";
+    break;
+    case 21:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457218202861598/pagile.png";
+    break;
+    case 22:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457240122261514/ppilleur.png";
+    break;
+    case 23:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457240352968734/psolitaire.png";
+    break;
+    case 24:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457240583643166/pblinde.png";
+    break;
+    case 25:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457260301090817/ppuissant.png";
+    break;
+    case 26:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457260514983956/ptemeraire.png";
+    break;
+    case 27:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457260720488488/pelue.png";
+    break;
+    case 28:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457291733200947/pmythique.png";
+    break;
+    case 29:
+      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457291993251860/paffectueux.png";
+    break;
+  }
+  return(a);
+}
+
+function getCardName(value){
+  switch(value){
+    case 0:
+      var a = "Dresseur de Squales";
+    break;
+    case 1:
+      var a = "Cavalier prétentieux";
+    break;
+    case 2:
+      var a = "Proto poro";
+    break;
+    case 3:
+      var a = "Fulminace";
+    break;
+    case 4:
+      var a = "Jumeaux artilleurs";
+    break;
+    case 5:
+      var a = "Sbire";
+    break;
+    case 6:
+      var a = "Téléscope ambulant";
+    break;
+    case 7:
+      var a = "Cercle de champignon";
+    break;
+    case 8:
+      var a = "Boss de l’arene";
+    break;
+    case 9:
+      var a = "Tenor terrifiant";
+    break;
+    case 10:
+      var a = "Voyageurs désabusés ";
+    break;
+    case 11:
+      var a = "Traineau de poros";
+    break;
+    case 12:
+      var a = "Mécha-commentateur";
+    break;
+    case 13:
+      var a = "Yordle aérien";
+    break;
+    case 14:
+      var a = "Monstre violet furieux";
+    break; 
+    case 15:
+      var a = "Semis de pomme de pin explosive";
+    break; 
+    case 16:
+      var a = "Grand-père féérique";
+    break; 
+    case 17:
+      var a = "Grimpeur érudit";
+    break; 
+    case 18:
+      var a = "Tête brulée";
+    break;
+    case 19:
+      var a = "Poropillon";
+    break;
+    case 20:
+      var a = "Poro sinistre";
+    break;
+    case 21:
+      var a = "Poro agile";
+    break;
+    case 22:
+      var a = "Poro pilleur";
+    break;
+    case 23:
+      var a = "Poro solitaire";
+    break;
+    case 24:
+      var a = "Poro blindé";
+    break;
+    case 25:
+      var a = "poro puissant";
+    break;
+    case 26:
+      var a = "Poro téméraire";
+    break;
+    case 27:
+      var a = "Poro élue";
+    break;
+    case 28:
+      var a = "Poro mythique";
+    break;
+    case 29:
+      var a = "Poro affectueux";
+    break;
   }
   return(a);
 }
@@ -124,195 +258,21 @@ function addImage(value){
 client.on("message", msg => {
   if (msg.content.includes("cartes")) {
 
-    let x = Math.floor(Math.random() * 19)
-    switch(x){
-      case 0:
-        var a = "Dresseur de Squales";
-      break;
-      case 1:
-        var a = "Cavalier prétentieux";
-      break;
-      case 2:
-        var a = "Proto poro";
-      break;
-      case 3:
-        var a = "Fulminace";
-      break;
-      case 4:
-        var a = "Jumeaux artilleurs";
-      break;
-      case 5:
-        var a = "Sbire";
-      break;
-      case 6:
-        var a = "Téléscope ambulant";
-      break;
-      case 7:
-        var a = "Cercle de champignon";
-      break;
-      case 8:
-        var a = "Boss de l’arene";
-      break;
-      case 9:
-        var a = "Tenor terrifiant";
-      break;
-      case 10:
-        var a = "Voyageurs désabusés ";
-      break;
-      case 11:
-        var a = "Traineau de poros";
-      break;
-      case 12:
-        var a = "Mécha-commentateur";
-      break;
-      case 13:
-        var a = "Yordle aérien";
-      break;
-      case 14:
-        var a = "Monstre violet furieux";
-      break; 
-      case 15:
-        var a = "Semis de pomme de pin explosive";
-      break; 
-      case 16:
-        var a = "Grand-père féérique";
-      break; 
-      case 17:
-        var a = "Grimpeur érudit";
-      break; 
-      case 18:
-        var a = "Tête brulée";
-      break; 
-    }
+    let x = Math.floor(Math.random() * 30)
+    var a = getCardName(x);
 
     let y = 0;
     do {
-      y = Math.floor(Math.random() * 19);
+      y = Math.floor(Math.random() * 30);
     }while (y==x);
 
     let z;
     do {
-      z = Math.floor(Math.random() * 19);
+      z = Math.floor(Math.random() * 30);
     }while (z==x || z==y);
 
-    switch(y){
-      case 0:
-        var b = "Dresseur de Squales";
-      break;
-      case 1:
-        var b = "Cavalier prétentieux";
-      break;
-      case 2:
-        var b = "Proto poro";
-      break;
-      case 3:
-        var b = "Fulminace";
-      break;
-      case 4:
-        var b = "Jumeaux artilleurs";
-      break;
-      case 5:
-        var b = "Sbire";
-      break;
-      case 6:
-        var b = "Téléscope ambulant";
-      break;
-      case 7:
-        var b = "Cercle de champignon";
-      break;
-      case 8:
-        var b = "Boss de l’arene";
-      break;
-      case 9:
-        var b = "Tenor terrifiant";
-      break;
-      case 10:
-        var b = "Voyageurs désabusés ";
-      break;
-      case 11:
-        var b = "Traineau de poros";
-      break;
-      case 12:
-        var b = "Mécha-commentateur";
-      break;
-      case 13:
-        var b = "Yordle aérien";
-      break;
-      case 14:
-        var b = "Monstre violet furieux";
-      break; 
-      case 15:
-        var b = "Semis de pomme de pin explosive";
-      break; 
-      case 16:
-        var b = "Grand-père féérique";
-      break; 
-      case 17:
-        var b = "Grimpeur érudit";
-      break; 
-      case 18:
-        var b = "Tête brulée";
-      break;  
-    }
-    switch(z){
-      case 0:
-        var c = "Dresseur de Squales";
-      break;
-      case 1:
-        var c = "Cavalier prétentieux";
-      break;
-      case 2:
-        var c = "Proto poro";
-      break;
-      case 3:
-        var c = "Fulminace";
-      break;
-      case 4:
-        var c = "Jumeaux artilleurs";
-      break;
-      case 5:
-        var c = "Sbire";
-      break;
-      case 6:
-        var c = "Téléscope ambulant";
-      break;
-      case 7:
-        var c = "Cercle de champignon";
-      break;
-      case 8:
-        var c = "Boss de l’arene";
-      break;
-      case 9:
-        var c = "Tenor terrifiant";
-      break;
-      case 10:
-        var c = "Voyageurs désabusés ";
-      break;
-      case 11:
-        var c = "Traineau de poros";
-      break;
-      case 12:
-        var c = "Mécha-commentateur";
-      break;
-      case 13:
-        var c = "Yordle aérien";
-      break;
-      case 14:
-        var c = "Monstre violet furieux";
-      break; 
-      case 15:
-        var c = "Semis de pomme de pin explosive";
-      break; 
-      case 16:
-        var c = "Grand-père féérique";
-      break; 
-      case 17:
-        var c = "Grimpeur érudit";
-      break; 
-      case 18:
-        var c = "Tête brulée";
-      break;  
-    }
+    var b = getCardName(y);
+    var c = getCardName(z);
 
     msg.reply(`- ${a} \n- ${b} \n- ${c}`);
     msg.channel.send(addImage(x));
