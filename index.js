@@ -1,6 +1,4 @@
 const { Client, Intents } = require('discord.js');
-const sql = require("sqlite");
-sql.open("./database.sqlite")
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 require("dotenv").config();
 
