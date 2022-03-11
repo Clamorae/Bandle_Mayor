@@ -47,9 +47,8 @@ function getSentence(value){
   return (a);
 }
 
-client.on('message', function(message) {
-  // Now, you can use the message variable inside
-  if (message.content === "launch") {
+client.on("message", msg => {
+  if (msg.content=="launch") {
       msg.reply("daily quote launched");
       daytime = 0;
       var interval = setInterval (function () {
