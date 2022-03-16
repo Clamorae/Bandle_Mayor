@@ -52,7 +52,7 @@ client.on('message', function(message) {
   const currentDate = new Date();
   const hms = currentDate.toLocaleString().substring(11);
   const hour = hms.slice(0, -6);
-  console.log(hour);
+  console.log(currentDate.toLocaleString());
   console.log(newDay);
   if (hour===':20' && newDay==='true'){
     message.reply(getSentence(Math.floor(Math.random()* 8)));
