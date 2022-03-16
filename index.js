@@ -1,4 +1,5 @@
 const { Client, Intents } = require('discord.js');
+global.newDay="true";
 
 /*const sql = require("sqlite");
 sql.open("./database.sqlite");
@@ -12,8 +13,8 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    if (msg.content.includes("maire")) {
-      msg.reply(getSentence(Math.floor(Math.random() * 8)))
+    if (msg.content.includes("maire")){
+      msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
 });
 
@@ -47,18 +48,18 @@ function getSentence(value){
   return (a);
 }
 
-client.on("message", msg => {
-  if (msg.content=="launch") {
-      msg.reply("daily quote launched");
-      daytime = 0;
-      var interval = setInterval (function () {
-        daytime++;
-        message.channel
-          .send(getSentence(Math.floor(Math.random() * 8))) // increment the variable
-          .catch(console.error); // add error handling here
-      }, 86400 * 1000); 
-      var stopwatch = 0;
-      setInterval(() => console.log(`It's been ${++stopwatch} second(s)`), 1000);
+client.on('message', function(message) {
+  const currentDate = new Date();
+  const hms = currentDate.toLocaleString().substring(12);
+  const hour = hms.slice(0, -6);
+  console.log(hour);
+  console.log(newDay);
+  if (hour==='20' && newDay==='true'){
+    message.reply(getSentence(Math.floor(Math.random()* 8)));
+    newDay="false";
+  }else if (hour==='21' && newDay==='false'){
+    console.log("BBBBBBBBB");
+    newDay="true";
   }
 });
 
