@@ -1,4 +1,5 @@
 const { Client, Intents } = require('discord.js');
+global.newDay="true";
 
 /*const sql = require("sqlite");
 sql.open("./database.sqlite");
@@ -13,8 +14,8 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    if (msg.content.includes("maire")) {
-      msg.reply(getSentence(Math.floor(Math.random() * 8)));
+    if (msg.content.includes("maire")){
+      msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
 });
 
@@ -49,25 +50,19 @@ function getSentence(value){
 }
 
 client.on('message', function(message) {
-  if (moment().format("h")=="20" && newDay==true){
-    msg.reply(getSentence(Math.floor(Math.random() * 8)));
-    newDay=false;
-  }else if (moment().format("h")=="21" && newDay==false){
-    newDay=true;
+  const currentDate = new Date();
+  const hms = currentDate.toLocaleString().substring(11);
+  const hour = hms.slice(0, -6);
+  console.log(currentDate.toLocaleString());
+  console.log(newDay);
+  console.log(hour);
+  if (hour===':20' && newDay==='true'){
+    message.reply(getSentence(Math.floor(Math.random()* 8)));
+    newDay="false";
+  }else if (hour===':21' && newDay==='false'){
+    console.log("BBBBBBBBB");
+    newDay="true";
   }
-  // Now, you can use the message variable inside
-  /*if (message.content === "launch") {
-      msg.reply("daily quote launched");
-      daytime = 0;
-      var interval = setInterval (function () {
-        daytime++;
-        message.channel
-          .send(getSentence(Math.floor(Math.random() * 8))) // increment the variable
-          .catch(console.error); // add error handling here
-      }, 86400 * 1000); 
-      var stopwatch = 0;
-      setInterval(() => console.log(`It's been ${++stopwatch} second(s)`), 1000);
-  }*/
 });
 
 function addImage(value){
