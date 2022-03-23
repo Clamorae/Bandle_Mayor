@@ -52,14 +52,14 @@ function getSentence(value){
 client.on('message', function(message) {
   const currentDate = new Date();
   const hms = currentDate.toLocaleString().substring(11);
-  const hour = hms.slice(0, -6);
+  const hour = hms.slice(0, -9);
   console.log(currentDate.toLocaleString());
   console.log(newDay);
   console.log(hour);
-  if (hour===':20' && newDay==='true'){
+  if (hour==='1' && newDay==='true'){
     message.reply(getSentence(Math.floor(Math.random()* 8)));
     newDay="false";
-  }else if (hour===':21' && newDay==='false'){
+  }else if (hour==='2' && newDay==='false'){
     console.log("BBBBBBBBB");
     newDay="true";
   }
