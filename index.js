@@ -286,7 +286,7 @@ client.on("message", msg => {
 client.on("message", msg => {
   if (msg.content.includes("avis")) {
 
-    let x = Math.floor(Math.random() * 2)
+    let x = Math.floor(Math.random() * 8)
 
     switch(x){
       case 0:
@@ -298,19 +298,19 @@ client.on("message", msg => {
       case 2:
         var a = "Rincé";
       break;
-      case 0:
+      case 3:
         var a = "De fou !";
       break;
-      case 1:
+      case 4:
         var a = "C'est carré je stream";
       break;
-      case 2:
+      case 5:
         var a = "Au top";
       break;
-      case 1:
+      case 6:
         var a = "Ratio bouffon";
       break;
-      case 2:
+      case 7:
         var a = "Flemme de répondre :zzz:";
       break;
     }
