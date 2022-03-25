@@ -283,4 +283,24 @@ client.on("message", msg => {
   }
 });
 
+client.on("message", msg => {
+  if (msg.content.includes("avis")) {
+
+    let x = Math.floor(Math.random() * 2)
+
+    switch(x){
+      case 0:
+        var a = "Oui";
+      break;
+      case 1:
+        var a = "Non";
+      break;
+      case 2:
+        var a = "Peut-etre";
+      break;
+    }
+    msg.reply(`${a}`);
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
