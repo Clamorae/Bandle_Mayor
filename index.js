@@ -290,13 +290,28 @@ client.on("message", msg => {
 
     switch(x){
       case 0:
-        var a = "Oui";
+        var a = "idée de merde";
       break;
       case 1:
-        var a = "Non";
+        var a = "Pas ouf";
       break;
       case 2:
-        var a = "Peut-etre";
+        var a = "Rincé";
+      break;
+      case 0:
+        var a = "De fou !";
+      break;
+      case 1:
+        var a = "C'est carré je stream";
+      break;
+      case 2:
+        var a = "Au top";
+      break;
+      case 1:
+        var a = "Ratio bouffon";
+      break;
+      case 2:
+        var a = "Flemme de répondre :zzz:";
       break;
     }
     msg.reply(`${a}`);
