@@ -286,4 +286,39 @@ client.on("message", msg => {
   }
 });
 
+client.on("message", msg => {
+  if (msg.content.includes("avis")) {
+
+    let x = Math.floor(Math.random() * 8)
+
+    switch(x){
+      case 0:
+        var a = "idée de merde";
+      break;
+      case 1:
+        var a = "Pas ouf";
+      break;
+      case 2:
+        var a = "Rincé";
+      break;
+      case 3:
+        var a = "De fou !";
+      break;
+      case 4:
+        var a = "C'est carré je stream";
+      break;
+      case 5:
+        var a = "Au top";
+      break;
+      case 6:
+        var a = "Ratio bouffon";
+      break;
+      case 7:
+        var a = "Flemme de répondre :zzz:";
+      break;
+    }
+    msg.reply(`${a}`);
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
