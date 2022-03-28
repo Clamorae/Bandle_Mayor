@@ -17,6 +17,9 @@ client.on("message", msg => {
     if (msg.content.includes("maire")){
       msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
+    if (msg.content.includes("ratio")){
+      msg.react('\:thumbsup: ');
+    }
 });
 
 function getSentence(value){
