@@ -18,9 +18,10 @@ client.on("message", msg => {
       msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
     //ANCHOR try again later
-    /*if (msg.content.includes("ratio")){
-      msg.react(':thumbsup:');
-    }*/
+    if (msg.content.includes("ratio")){
+      console.log("aled");
+      //msg.react(':thumbsup:');
+    }
 });
 
 function getSentence(value){
