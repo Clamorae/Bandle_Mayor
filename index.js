@@ -19,8 +19,7 @@ client.on("message", msg => {
     }
     //ANCHOR try again later
     if (msg.content.includes("ratio")){
-      console.log("aled");
-      //msg.react(':thumbsup:');
+      message.react('👍');
     }
 });
 
