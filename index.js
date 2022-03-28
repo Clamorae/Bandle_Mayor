@@ -18,7 +18,7 @@ client.on("message", msg => {
       msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
     if (msg.content.includes("ratio")){
-      msg.react('\:thumbsup: ');
+      msg.react(':thumbsup:');
     }
 });
 
