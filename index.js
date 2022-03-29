@@ -17,7 +17,6 @@ client.on("message", msg => {
     if (msg.content.includes("maire")){
       msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
-    //ANCHOR try again later
     if (msg.content.includes("ratio")){
       msg.react('👍');
     }
@@ -288,7 +287,7 @@ client.on("message", msg => {
 });
 
 client.on("message", msg => {
-  if (msg.content.includes("avis")) {
+  if (msg.content.includes("avis")||msg.content.includes("Avis")) {
 
     let x = Math.floor(Math.random() * 8)
 
