@@ -14,10 +14,10 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    if (msg.content.includes("maire")){
+    if (msg.content.includes("maire")||(msg.content.includes("Maire"))){
       msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
-    if (msg.content.includes("ratio")){
+    if (msg.content.includes("ratio")||msg.content.includes("Ratio")){
       msg.react('👍');
     }
 });
@@ -261,7 +261,7 @@ function getCardName(value){
 }
 
 client.on("message", msg => {
-  if (msg.content.includes("cartes")) {
+  if (msg.content.includes("carte")||(msg.content.includes("Carte"))) {
 
     let x = Math.floor(Math.random() * 30)
     var a = getCardName(x);
