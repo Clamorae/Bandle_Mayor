@@ -20,6 +20,9 @@ client.on("message", msg => {
     if (msg.content.includes("ratio")||msg.content.includes("Ratio")){
       msg.react('👍');
     }
+    if (msg.content.includes("ets")){
+      msg.reply('https://media.discordapp.net/attachments/936395302158602281/958668956112138240/apps.png?width=827&height=465');
+    }
 });
 
 function getSentence(value){
