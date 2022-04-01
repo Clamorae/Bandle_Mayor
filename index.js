@@ -292,7 +292,7 @@ client.on("message", msg => {
 client.on("message", msg => {
   if (msg.content.includes("avis")||msg.content.includes("Avis")) {
 
-    let x = Math.floor(Math.random() * 8)
+    let x = Math.floor(Math.random() * 15)
 
     switch(x){
       case 0:
@@ -318,6 +318,28 @@ client.on("message", msg => {
       break;
       case 7:
         var a = "Flemme de répondre :zzz:";
+      break;
+
+      case 8:
+        var a = "Vive JoJolion fuck les bouffons qui ont pas fini";
+      break;
+      case 9:
+        var a = "Sayé tu fais trop le cosmonaute lache moi wAllah";
+      break;
+      case 10:
+        var a = "Bandle tree rework @pakichu 😬";
+      break;
+      case 11:
+        var a = "🙏";
+      break;
+      case 12:
+        var a = "😬";
+      break;
+      case 13:
+        var a = "10/20 franchement osef";
+      break;
+      case 14:
+        var a = "St Sylvestre Filet O Fish";
       break;
     }
     msg.reply(`${a}`);
