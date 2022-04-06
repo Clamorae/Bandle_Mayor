@@ -65,7 +65,7 @@ client.on('message', function(message) {
   if (hour==='1' && newDay==='true'){
     message.reply(getSentence(Math.floor(Math.random()* 8)));
     newDay="false";
-  }else if (hour==='2' && newDay==='false'){
+  }else if (hour==='2' && newDay==='false'){  
     console.log("BBBBBBBBB");
     newDay="true";
   }
@@ -319,7 +319,6 @@ client.on("message", msg => {
       case 7:
         var a = "Flemme de répondre :zzz:";
       break;
-
       case 8:
         var a = "Vive JoJolion fuck les bouffons qui ont pas fini";
       break;
