@@ -23,6 +23,9 @@ client.on("message", msg => {
     if (msg.content.includes("ets")){
       msg.reply('https://media.discordapp.net/attachments/936395302158602281/958668956112138240/apps.png?width=827&height=465');
     }
+    if (msg.content.includes("la haine")||(msg.content.includes("La haine"))){
+      msg.reply('https://cdn.discordapp.com/attachments/936395302158602281/959565986648969256/unknown.png');
+    }
 });
 
 function getSentence(value){
