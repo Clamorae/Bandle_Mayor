@@ -1,4 +1,5 @@
 const { Client, Intents } = require('discord.js');
+const { MessageActionRow, MessageButton } = require('discord.js');
 global.newDay="true";
 
 /*const sql = require("sqlite");
@@ -268,7 +269,7 @@ function getCardName(value){
 
 client.on("message", msg => {
   if (msg.content.includes("carte")||(msg.content.includes("Carte"))) {
-
+    const userID = msg.author.id;
     let x = Math.floor(Math.random() * 30)
     var a = getCardName(x);
 
@@ -285,10 +286,49 @@ client.on("message", msg => {
     var b = getCardName(y);
     var c = getCardName(z);
 
-    msg.reply(`- ${a} \n- ${b} \n- ${c}`);
     msg.channel.send(addImage(x));
     msg.channel.send(addImage(y));
     msg.channel.send(addImage(z));
+    
+    const row = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+					.setCustomId('one')
+					.setLabel(`${a}`)
+					.setStyle('PRIMARY'),
+        new MessageButton()
+					.setCustomId('two')
+					.setLabel(`${b}`)
+					.setStyle('PRIMARY'),
+        new MessageButton()
+					.setCustomId('three')
+					.setLabel(`${c}`)
+					.setStyle('PRIMARY'),
+			);
+
+		msg.reply({ content: `- ${a} \n- ${b} \n- ${c}`, components: [row] });
+    const filter = i => i.user.id === userID;
+    const collector = msg.channel.createMessageComponentCollector({ filter, time: 15000 });
+    const wait = require('node:timers/promises').setTimeout;
+
+    collector.on('collect', async i => {
+      if (i.customId === 'one') {
+        await i.deferUpdate();
+        await i.editReply({ content: `Vous avez choisi ${a}`, components: [] });
+        await wait(4000);
+      }else if(i.customId === 'two'){
+        await i.deferUpdate();
+        await i.editReply({ content: `Vous avez choisi ${b}`, components: [] });
+        await wait(4000);
+      }else if(i.customId === 'three'){
+        await i.deferUpdate();
+        await i.editReply({ content: `Vous avez choisi ${c}`, components: [] });
+        await wait(4000);
+      }
+    });
+
+    collector.on('end', collected => console.log(`Collected ${collected.size} items`));
+
   }
 });
 
@@ -323,7 +363,7 @@ client.on("message", msg => {
         var a = "Flemme de répondre :zzz:";
       break;
       case 8:
-        var a = "Vive JoJolion fuck les bouffons qui ont pas fini";
+        var a = "Fuck Riot";
       break;
       case 9:
         var a = "Sayé tu fais trop le cosmonaute lache moi wAllah";
