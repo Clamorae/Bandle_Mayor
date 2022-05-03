@@ -2,10 +2,6 @@ const { Client, Intents } = require('discord.js');
 const { MessageActionRow, MessageButton } = require('discord.js');
 global.newDay="true";
 
-/*const sql = require("sqlite");
-sql.open("./database.sqlite");
-sql.run("CREATE TABLE IF NOT EXISTS userData (userId TEXT, money INTEGER)");*/
-
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 require("dotenv").config();
 
@@ -13,6 +9,8 @@ client.on("ready", () => {
     console.log("I'm ready !");
     var newDay=true;
 });
+
+
 
 client.on("message", msg => {
     if (msg.content.includes("maire")||(msg.content.includes("Maire"))){
@@ -74,6 +72,29 @@ client.on('message', function(message) {
     newDay="true";
   }
 });
+
+function readFile(userId,value){
+  const fs = require('fs');
+
+  fs.readFile('./BDD.csv', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    if(data.indexOf(userId) >= 0){
+      const content = 'Some content!'
+      wf.writeFile('/Users/joe/test.txt', content, err => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        //file written successfully
+      })
+    }
+    console.log(data);
+  });
+
+}
 
 function addImage(value){
   switch(value){
@@ -310,6 +331,7 @@ client.on("message", msg => {
     const filter = i => i.user.id === userID;
     const collector = msg.channel.createMessageComponentCollector({ filter, time: 15000 });
     const wait = require('node:timers/promises').setTimeout;
+    readFile(userID,0);
 
     collector.on('collect', async i => {
       if (i.customId === 'one') {
