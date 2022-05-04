@@ -61,9 +61,9 @@ client.on('message', function(message) {
   const currentDate = new Date();
   const hms = currentDate.toLocaleString().substring(11);
   const hour = hms.slice(0, -9);
-  console.log(currentDate.toLocaleString());
+  /*console.log(currentDate.toLocaleString());
   console.log(newDay);
-  console.log(hour);
+  console.log(hour);*/
   if (hour==='1' && newDay==='true'){
     message.reply(getSentence(Math.floor(Math.random()* 8)));
     newDay="false";
@@ -72,6 +72,49 @@ client.on('message', function(message) {
     newDay="true";
   }
 });
+
+function replaceAt(index, isAdded, data) {
+  let begin = data.substring(0,index);
+  let end = data.substring(index+1,data.length);
+  data = data.substring(index,index+1);
+  if(isAdded){
+    var value = Number(data) + 1;
+  }else{
+    var value = Number(data) - 1;
+  }
+  data = value.toString();
+  console.log(data);
+  let newBegin = begin.concat(data);
+  let newData = newBegin.concat(end);
+  const fs = require('fs');
+  fs.writeFile("./BDD.csv", newData, function(err) {
+      if(err) {
+          return console.log(err);
+      }
+      console.log("The file was saved!");
+  });
+}
+
+function newUser(userId,data,value){
+  let newLine = userId.concat(";0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0\n");
+  let newText = newLine.concat(data);
+  const fs = require('fs');
+  console.log(newLine);
+  fs.writeFile("./BDD.csv", newText, function(err) {
+      if(err) {
+          return console.log(err);
+      }
+      console.log("The file was saved!");
+  }); 
+  let index=0;
+  for(var i=newText.indexOf(userId); i<data.length;i++) {
+      if (newText[i] === ";"){
+        index=i;
+        i=newText.length;
+      }
+    }
+  replaceAt((index+1+2*value),1, newText);
+}
 
 function readFile(userId,value){
   const fs = require('fs');
@@ -82,16 +125,18 @@ function readFile(userId,value){
       return;
     }
     if(data.indexOf(userId) >= 0){
-      const content = 'Some content!'
-      wf.writeFile('/Users/joe/test.txt', content, err => {
-        if (err) {
-          console.error(err)
-          return
-        }
-        //file written successfully
-      })
+      let index=0;
+      for(var i=data.indexOf(userId); i<data.length;i++) {
+          if (data[i] === ";"){
+            index=i;
+            i=data.length;
+          }
+      }
+      replaceAt((index+1+2*value),1, data);
+    }else{
+      newUser(userId,data,value);
     }
-    console.log(data);
+    //console.log(data);
   });
 
 }
@@ -331,20 +376,23 @@ client.on("message", msg => {
     const filter = i => i.user.id === userID;
     const collector = msg.channel.createMessageComponentCollector({ filter, time: 15000 });
     const wait = require('node:timers/promises').setTimeout;
-    readFile(userID,0);
+    
 
     collector.on('collect', async i => {
       if (i.customId === 'one') {
         await i.deferUpdate();
         await i.editReply({ content: `Vous avez choisi ${a}`, components: [] });
+        readFile(userID,x);
         await wait(4000);
       }else if(i.customId === 'two'){
         await i.deferUpdate();
         await i.editReply({ content: `Vous avez choisi ${b}`, components: [] });
+        readFile(userID,y);
         await wait(4000);
       }else if(i.customId === 'three'){
         await i.deferUpdate();
         await i.editReply({ content: `Vous avez choisi ${c}`, components: [] });
+        readFile(userID,z);
         await wait(4000);
       }
     });
