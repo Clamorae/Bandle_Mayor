@@ -25,7 +25,47 @@ client.on("message", msg => {
     if (msg.content.includes("la haine")||(msg.content.includes("La haine"))){
       msg.reply('https://cdn.discordapp.com/attachments/936395302158602281/959565986648969256/unknown.png');
     }
+    if (msg.content == "inventaire"){
+      getInventory(msg.author.id,msg);
+    }
 });
+
+function getInventory(userId,msg){
+  const fs = require('fs');
+  let begin = "Vous avez ";
+
+  fs.readFile('./BDD.csv', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }else{
+      let index=0;
+      for(var i=data.indexOf(userId); i<data.length;i++) {
+        if (data[i] === ";"){
+          index=i+1;
+          i=data.length;
+        }
+      }
+
+      let value = 0;
+      let card =0
+      while(card<30){
+        value = data.substring(index,index+1);
+        if(Number(value)!=0){
+          begin = begin.concat(value);
+          begin = begin.concat(" ");
+          begin = begin.concat(getCardName(Number(card)));
+          begin = begin.concat(",");
+        }
+        card+=1;
+        index+=2;
+      }
+      msg.reply(begin);
+    }
+  });
+
+  
+}
 
 function getSentence(value){
   switch(value){
