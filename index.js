@@ -10,7 +10,10 @@ client.on("ready", () => {
     var newDay=true;
 });
 
-
+client.on("messageUpdate", (oldMessage, newMessage) => {
+  if(oldMessage.content === newMessage.content) return;
+  newMessage.reply("Tu vas regretter ce que tu viens de faire...");
+});
 
 client.on("message", msg => {
     if (msg.content.includes("maire")||(msg.content.includes("Maire"))){
@@ -25,7 +28,47 @@ client.on("message", msg => {
     if (msg.content.includes("la haine")||(msg.content.includes("La haine"))){
       msg.reply('https://imgur.com/h31mW8Q');
     }
+    if (msg.content == "inventaire"){
+      getInventory(msg.author.id,msg);
+    }
 });
+
+function getInventory(userId,msg){
+  const fs = require('fs');
+  let begin = "Vous avez ";
+
+  fs.readFile('./BDD.csv', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }else{
+      let index=0;
+      for(var i=data.indexOf(userId); i<data.length;i++) {
+        if (data[i] === ";"){
+          index=i+1;
+          i=data.length;
+        }
+      }
+
+      let value = 0;
+      let card =0
+      while(card<30){
+        value = data.substring(index,index+1);
+        if(Number(value)!=0){
+          begin = begin.concat(value);
+          begin = begin.concat(" ");
+          begin = begin.concat(getCardName(Number(card)));
+          begin = begin.concat(",");
+        }
+        card+=1;
+        index+=2;
+      }
+      msg.reply(begin);
+    }
+  });
+
+  
+}
 
 function getSentence(value){
   switch(value){
@@ -404,6 +447,11 @@ client.on("message", msg => {
 
 client.on("message", msg => {
   if (msg.content.includes("avis")||msg.content.includes("Avis")) {
+    
+    if (msg.content.includes("turtle") || msg.content.includes("tortoise")){
+	msg.reply("un giga banger, peut importe ce que peuvent en dire les autres");
+	return;
+    }
 
     let x = Math.floor(Math.random() * 15)
 
