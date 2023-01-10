@@ -449,8 +449,12 @@ client.on("message", msg => {
   if (msg.content.includes("avis")||msg.content.includes("Avis")) {
     
     if (msg.content.includes("turtle") || msg.content.includes("tortoise")){
-	msg.reply("un giga banger, peut importe ce que peuvent en dire les autres");
-	return;
+      if (msg.content.includes("card") || msg.content.includes("bot") || msg.content.includes("game")) {
+        msg.reply("Les tortues oui, mais pas dans un bot discord. Déso pas déso !");
+      } else {
+        msg.reply("un giga banger, peut importe ce que peuvent en dire les autres");
+      }
+	    return;
     }
 
     let x = Math.floor(Math.random() * 15)
