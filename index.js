@@ -20,10 +20,10 @@ client.on("message", msg => {
       msg.react('👍');
     }
     if (msg.content.includes("ets")){
-      msg.reply('https://media.discordapp.net/attachments/936395302158602281/958668956112138240/apps.png?width=827&height=465');
+      msg.reply('https://imgur.com/VyjhAjS');
     }
     if (msg.content.includes("la haine")||(msg.content.includes("La haine"))){
-      msg.reply('https://cdn.discordapp.com/attachments/936395302158602281/959565986648969256/unknown.png');
+      msg.reply('https://imgur.com/h31mW8Q');
     }
 });
 
@@ -144,94 +144,94 @@ function readFile(userId,value){
 function addImage(value){
   switch(value){
     case 0:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092846699896883/dresseur.png";
+      var a = "https://imgur.com/vb9dOap";
     break;
     case 1:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092592818671616/cavalier.png";
+      var a = "https://imgur.com/DKAGAeA";
     break;
     case 2:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093947952164895/proto.png";
+      var a = "https://imgur.com/bqutsV1";
     break;
     case 3:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092855004622888/fulmi.png";
+      var a = "https://imgur.com/CaO6VNO";
     break;
     case 4:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093962300850206/jumeaux.png";
+      var a = "https://imgur.com/flUXCPW";
     break;
     case 5:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093962560925706/sbire.png";
+      var a = "https://imgur.com/NTMzYrw";
     break;
     case 6:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931506270258/telescope.png";
+      var a = "https://imgur.com/z6YgYDI";
     break;
     case 7:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092832875470858/cercle.png";
+      var a = "https://imgur.com/Ep8Cf8V";
     break;
     case 8:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943092292149985290/boss.png";
+      var a = "https://imgur.com/ZpOCTIO";
     break;
     case 9:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093948140896266/tenor.png";
+      var a = "https://imgur.com/76qdfG9";
     break;
     case 10:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931724402688/voyageurs.png";
+      var a = "https://imgur.com/kycE5GU";
     break;
     case 11:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093904201371678/traineau.png";
+      var a = "https://imgur.com/uHpx42B";
     break;
     case 12:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093904444645396/mecha.png";
+      var a = "https://imgur.com/QBrgaSW";
     break;
     case 13:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093948379967548/yordle.png";
+      var a = "https://imgur.com/DnyKzQp";
     break;
     case 14:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931288199198/monstre.png";
+      var a = "https://imgur.com/q61pW5O";
     break;
     case 15:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093903932932176/semis.png";
+      var a = "https://imgur.com/6BHjNjf";
     break; 
     case 16:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093931074273330/grand-pere.png";
+      var a = "https://imgur.com/Fa5v7b5";
     break; 
     case 17:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093947671126026/grimpeur.png";
+      var a = "https://imgur.com/zbkjFTX";
     break; 
     case 18:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943093962774831174/tete.png";
+      var a = "https://imgur.com/c99DI3t";
     break;
     case 19:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457217858904064/poropillon.png";
+      var a = "https://imgur.com/DvbLe3e";
     break;
     case 20:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457218026680330/psinistre.png";
+      var a = "https://imgur.com/gTHUuEU";
     break;
     case 21:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457218202861598/pagile.png";
+      var a = "https://imgur.com/69p8N4c";
     break;
     case 22:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457240122261514/ppilleur.png";
+      var a = "https://imgur.com/7JZogNQ";
     break;
     case 23:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457240352968734/psolitaire.png";
+      var a = "https://imgur.com/Rpjlfhu";
     break;
     case 24:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457240583643166/pblinde.png";
+      var a = "https://imgur.com/pOlL3H9";
     break;
     case 25:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457260301090817/ppuissant.png";
+      var a = "https://imgur.com/mmMZaqs";
     break;
     case 26:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457260514983956/ptemeraire.png";
+      var a = "https://imgur.com/SzB0WVf";
     break;
     case 27:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457260720488488/pelue.png";
+      var a = "https://imgur.com/OcQqqOt";
     break;
     case 28:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457291733200947/pmythique.png";
+      var a = "https://imgur.com/qqQn8CU";
     break;
     case 29:
-      var a = "https://cdn.discordapp.com/attachments/936395302158602281/943457291993251860/paffectueux.png";
+      var a = "https://imgur.com/JcREqF6";
     break;
   }
   return(a);
