@@ -31,6 +31,9 @@ client.on("message", msg => {
     if (msg.content == "inventaire"){
       getInventory(msg.author.id,msg);
     }
+    if (msg.content.toUpperCase().includes("SLUGMA")){
+      msg.reply("Slugma Balls !");    
+    }
 });
 
 function getInventory(userId,msg){
