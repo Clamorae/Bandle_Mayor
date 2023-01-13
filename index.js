@@ -12,6 +12,7 @@ client.on("ready", () => {
 
 client.on("messageUpdate", (oldMessage, newMessage) => {
   if(oldMessage.content === newMessage.content) return;
+  newMessage.reply("Tu vas regretter ce que tu viens de faire...");
 });
 
 client.on("message", msg => {
