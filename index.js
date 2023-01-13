@@ -19,19 +19,19 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
 });
 
 client.on("message", msg => {
-    if (msg.content.includes("maire")||(msg.content.includes("Maire"))){
+    if (msg.content.toLowerCase().includes("maire")){
       msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
-    if (msg.content.includes("ratio")||msg.content.includes("Ratio")){
+    if (msg.content.toLowerCase().includes("ratio")){
       msg.react('👍');
     }
     if (msg.content.includes("ets")){
-      msg.reply('https://imgur.com/VyjhAjS');
+      msg.reply('https://media.discordapp.net/attachments/936395302158602281/958668956112138240/apps.png?width=827&height=465');
     }
     if (msg.content.includes("la haine")||(msg.content.includes("La haine"))){
-      msg.reply('https://imgur.com/h31mW8Q');
+      msg.reply('https://cdn.discordapp.com/attachments/936395302158602281/959565986648969256/unknown.png');
     }
-    if (msg.content == "inventaire"){
+    if (msg.content.toLowerCase() == "inventaire"){
       getInventory(msg.author.id,msg);
     }
 });
