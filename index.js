@@ -15,7 +15,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
   newMessage.reply("Tu vas regretter ce que tu viens de faire...");
 });
 
-client.on("message", msg => {
+client.on("messageCreate", msg => {
     if (msg.content.includes("maire")||(msg.content.includes("Maire"))){
       msg.reply(getSentence(Math.floor(Math.random()* 8)));
     }
@@ -100,7 +100,7 @@ function getSentence(value){
   return (a);
 }
 
-client.on('message', function(message) {
+client.on('messageCreate', function(message) {
   const currentDate = new Date();
   const hms = currentDate.toLocaleString().substring(11);
   const hour = hms.slice(0, -9);
@@ -376,7 +376,7 @@ function getCardName(value){
   return(a);
 }
 
-client.on("message", msg => {
+client.on("messageCreate", msg => {
   if (msg.content.includes("carte")||(msg.content.includes("Carte"))) {
     const userID = msg.author.id;
     let x = Math.floor(Math.random() * 30)
