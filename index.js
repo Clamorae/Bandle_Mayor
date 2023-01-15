@@ -1,9 +1,37 @@
-const { Client, Intents } = require('discord.js');
+const fs = require('fs');
+const { Client, Collection, Intents } = require('discord.js');
 const { MessageActionRow, MessageButton } = require('discord.js');
+require("dotenv").config();
+
 global.newDay="true";
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-require("dotenv").config();
+
+client.commands = new Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	// Set a new item in the Collection
+	// With the key as the command name and the value as the exported module
+	client.commands.set(command.data.name, command);
+}
+
+// Event listener for the commands entered by an user.
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	const command = client.commands.get(interaction.commandName);
+
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+	}
+});
 
 client.on("ready", () => {
     console.log("I'm ready !");
